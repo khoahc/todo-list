@@ -2,6 +2,7 @@ const express = require("express");
 const date = require(__dirname + "/date");
 const app = express();
 
+const port = process.env.PORT || 3000;
 const ITEMS = ["Buy Food", "Cook Food", "Eat Food"];
 const WORK_ITEMS = [];
 app.use(express.urlencoded({ extended: true }));
@@ -32,6 +33,6 @@ app.get("/about", function (req, res) {
   res.render("about");
 });
 
-app.listen(3000, function () {
+app.listen(port, function () {
   console.log("3000");
 });
